@@ -40,11 +40,11 @@ class CinemaHall(models.Model):
 
 
 class MovieSession(models.Model):
-    show_time = models.DateTimeField(auto_created=False, null=False)
+    show_time = models.DateTimeField()
     cinema_hall = models.ForeignKey(
         CinemaHall,
         on_delete=models.CASCADE,
-        related_name="cinema_halls",
+        related_name="sessions",
     )
     movie = models.ForeignKey(
         Movie,
